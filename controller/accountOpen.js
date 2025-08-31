@@ -4,6 +4,7 @@ const postAccount = async (req, res) => {
   try {
     const accountData = new AccOpenModel(req.body);
     const userData = await accountData.save();
+    console.log(userData);
     res.status(201).json({ message: "account created", user: userData });
   } catch (err) {
     console.log(err);
